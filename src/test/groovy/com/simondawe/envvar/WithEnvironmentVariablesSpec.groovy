@@ -12,7 +12,13 @@ class WithEnvironmentVariablesSpec extends Specification {
 
   void setup() {
     envvarValue = UUID.randomUUID().toString()
-    environmentVariables.setTestEnvVars([a: envvarValue])
+    environmentVariables.addEnvVar('a', envvarValue)
+  }
+
+  void cleanup() {
+    if (System.getenv('a')) {
+      throw new Exception('environment variables have not been cleaned up')
+    }
   }
 
   void 'get an env var'() {

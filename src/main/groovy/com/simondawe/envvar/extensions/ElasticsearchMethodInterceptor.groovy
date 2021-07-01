@@ -37,8 +37,8 @@ class ElasticsearchMethodInterceptor extends AbstractMethodInterceptor {
 
   @Override
   void interceptCleanupMethod(IMethodInvocation invocation) throws Throwable {
-    invocation.proceed()
     findEnvironmentVariables(invocation)?.resetEnvironmentVariables()
+    invocation.proceed()
   }
 
   private EnvironmentVariables findEnvironmentVariables(IMethodInvocation invocation, boolean shared = false) {
