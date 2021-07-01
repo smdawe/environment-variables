@@ -1,2 +1,2 @@
-rootProject.name = 'environment-variables-test-extension'
+rootProject.name = 'environment-variables-extension'
 include('lib')
