@@ -11,7 +11,7 @@ class EnvironmentVariables {
   void setEnvironmentVariables() {
     if (testEnvVars) {
       testEnvVars.each { envVar ->
-        envVars = envVars ? envVars.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
+        envVars = envVars ? envVar s.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
       }
     }
     envVars.setEnvironmentVariables()
