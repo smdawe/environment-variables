@@ -4,23 +4,34 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.*
 
 class EnvironmentVariables {
 
-  private final Map<String, String> testEnvVars = [:]
+  final Map<String, String> testEnvVars = [:]
 
   private WithEnvironmentVariables envVars
 
+  /**
+   * Set all environment variables added to class
+   */
   void setEnvironmentVariables() {
     if (testEnvVars) {
       testEnvVars.each { envVar ->
-        envVars = envVars ? envVar s.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
+        envVars = envVars ? envVars.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
       }
     }
     envVars.setEnvironmentVariables()
   }
 
+  /**
+   * Reset environment variables
+   */
   void resetEnvironmentVariables() {
     envVars.restoreOriginalVariables(System.getenv())
   }
 
+  /**
+   * Add an environment variable to the test
+   * @param name
+   * @param value
+   */
   void addEnvVar(String name, String value) {
     testEnvVars.put(name, value)
   }
