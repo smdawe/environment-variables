@@ -9,7 +9,7 @@ class EnvironmentVariables {
   private WithEnvironmentVariables envVars
 
   /**
-   * Set all environment variables added to class
+   * Set all environment variables
    */
   void setEnvironmentVariables() {
     if (testEnvVars) {
