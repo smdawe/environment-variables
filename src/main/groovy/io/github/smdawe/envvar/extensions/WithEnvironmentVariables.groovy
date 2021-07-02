@@ -1,4 +1,4 @@
-package com.github.simondawe.envvar.extensions
+package io.github.smdawe.envvar.extensions
 
 
 import org.spockframework.runtime.extension.ExtensionAnnotation

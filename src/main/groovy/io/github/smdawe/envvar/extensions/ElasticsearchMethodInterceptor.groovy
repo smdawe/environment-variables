@@ -1,6 +1,6 @@
-package com.github.simondawe.envvar.extensions
+package io.github.smdawe.envvar.extensions
 
-
+import io.github.smdawe.envvar.EnvironmentVariables
 import org.spockframework.runtime.extension.AbstractMethodInterceptor
 import org.spockframework.runtime.extension.IMethodInvocation
 import org.spockframework.runtime.model.FieldInfo
@@ -40,12 +40,12 @@ class ElasticsearchMethodInterceptor extends AbstractMethodInterceptor {
     invocation.proceed()
   }
 
-  private com.github.simondawe.envvar.EnvironmentVariables findEnvironmentVariables(IMethodInvocation invocation, boolean shared = false) {
-    com.github.simondawe.envvar.EnvironmentVariables environmentVariables
+  private EnvironmentVariables findEnvironmentVariables(IMethodInvocation invocation, boolean shared = false) {
+    EnvironmentVariables environmentVariables
 
     spec.allFields.each { FieldInfo fieldInfo ->
-      if (fieldInfo.type == com.github.simondawe.envvar.EnvironmentVariables && fieldInfo.shared == shared) {
-        environmentVariables = (fieldInfo.readValue(invocation.instance) as com.github.simondawe.envvar.EnvironmentVariables)
+      if (fieldInfo.type == EnvironmentVariables && fieldInfo.shared == shared) {
+        environmentVariables = (fieldInfo.readValue(invocation.instance) as EnvironmentVariables)
       }
     }
 
