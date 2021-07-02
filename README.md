@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.com.simondawe.envvar:environment-variables-extension:1.0.0'
+  compile 'io.github.smdawe:environment-variables-extension:1.0.0'
 }
 ```
 
