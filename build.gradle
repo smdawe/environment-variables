@@ -10,9 +10,9 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.codehaus.groovy', name: 'groovy', version: '3.0.+'
+    implementation group: 'org.codehaus.groovy', name: 'groovy', version: '3.0.8'
     implementation group: 'org.spockframework', name: 'spock-core', version: '2.0-M5-groovy-3.0'
-    implementation 'com.github.stefanbirkner:system-lambda:1.2.0+'
+    implementation 'com.github.stefanbirkner:system-lambda:1.2.0'
 }
 
 tasks.named('test') {
@@ -35,4 +35,54 @@ artifacts {
 
 signing {
     sign configurations.archives
+}
+
+group = 'io.github.smdawe'
+archivesBaseName = 'environment-variables-extension'
+version = '1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ssrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ssrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'environment-variables-extension'
+                packaging 'jar'
+                // optionally artifactId can be defined here
+                description 'Spock extension to control environmnet variables'
+                url 'https://github.com/smdawe/environment-variables-extension'
+
+                scm {
+                    connection 'scm:git:git://github.com/smdawe/environment-variables-extension.git'
+                    developerConnection 'scm:git:git://github.com/smdawe/environment-variables-extension.git'
+                    url 'https://github.com/smdawe/environment-variables-extension/tree/master'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'smdawe'
+                        name 'Simon Dawe'
+                        organization 'smdawe'
+                        organizationUrl 'https://github.com/smdawe'
+                    }
+                }
+            }
+        }
+    }
 }
