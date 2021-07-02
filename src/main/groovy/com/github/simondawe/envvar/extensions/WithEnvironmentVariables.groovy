@@ -1,6 +1,6 @@
-package com.simondawe.envvar.extensions
+package com.github.simondawe.envvar.extensions
 
-import com.simondawe.envvar.extensions.EnvironmentVariablesExtension
+
 import org.spockframework.runtime.extension.ExtensionAnnotation
 
 import java.lang.annotation.ElementType

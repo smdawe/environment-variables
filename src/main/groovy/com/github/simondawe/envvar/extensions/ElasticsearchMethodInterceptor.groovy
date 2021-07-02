@@ -1,7 +1,6 @@
-package com.simondawe.envvar.extensions
+package com.github.simondawe.envvar.extensions
 
-import com.simondawe.envvar.EnvironmentVariables
-import com.simondawe.envvar.extensions.EnvironmentVariablesExtension.ErrorListener
+
 import org.spockframework.runtime.extension.AbstractMethodInterceptor
 import org.spockframework.runtime.extension.IMethodInvocation
 import org.spockframework.runtime.model.FieldInfo
@@ -10,9 +9,9 @@ import org.spockframework.runtime.model.SpecInfo
 class ElasticsearchMethodInterceptor extends AbstractMethodInterceptor {
 
   private final SpecInfo spec
-  private final ErrorListener errorListener
+  private final EnvironmentVariablesExtension.ErrorListener errorListener
 
-  ElasticsearchMethodInterceptor(SpecInfo spec, ErrorListener errorListener) {
+  ElasticsearchMethodInterceptor(SpecInfo spec, EnvironmentVariablesExtension.ErrorListener errorListener) {
     this.spec = spec
     this.errorListener = errorListener
   }
@@ -41,12 +40,12 @@ class ElasticsearchMethodInterceptor extends AbstractMethodInterceptor {
     invocation.proceed()
   }
 
-  private EnvironmentVariables findEnvironmentVariables(IMethodInvocation invocation, boolean shared = false) {
-    EnvironmentVariables environmentVariables
+  private com.github.simondawe.envvar.EnvironmentVariables findEnvironmentVariables(IMethodInvocation invocation, boolean shared = false) {
+    com.github.simondawe.envvar.EnvironmentVariables environmentVariables
 
     spec.allFields.each { FieldInfo fieldInfo ->
-      if (fieldInfo.type == EnvironmentVariables && fieldInfo.shared == shared) {
-        environmentVariables = (fieldInfo.readValue(invocation.instance) as EnvironmentVariables)
+      if (fieldInfo.type == com.github.simondawe.envvar.EnvironmentVariables && fieldInfo.shared == shared) {
+        environmentVariables = (fieldInfo.readValue(invocation.instance) as com.github.simondawe.envvar.EnvironmentVariables)
       }
     }
 

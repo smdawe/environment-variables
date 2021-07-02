@@ -1,4 +1,4 @@
-package com.simondawe.envvar
+package com.github.simondawe.envvar
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.*
 

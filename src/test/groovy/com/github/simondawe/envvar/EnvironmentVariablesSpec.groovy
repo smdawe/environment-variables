@@ -1,4 +1,4 @@
-package com.simondawe.envvar
+package com.github.simondawe.envvar
 
 import spock.lang.Specification
 

@@ -1,6 +1,6 @@
-package com.simondawe.envvar
+package com.github.simondawe.envvar
 
-import com.simondawe.envvar.extensions.WithEnvironmentVariables
+import com.github.simondawe.envvar.extensions.WithEnvironmentVariables
 import spock.lang.Shared
 import spock.lang.Specification
 

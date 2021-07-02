@@ -1,4 +1,4 @@
-package com.simondawe.envvar.extensions
+package com.github.simondawe.envvar.extensions
 
 import org.spockframework.runtime.AbstractRunListener
 import org.spockframework.runtime.extension.AbstractAnnotationDrivenExtension
