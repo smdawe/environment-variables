@@ -17,14 +17,14 @@ class EnvironmentVariables {
         envVars = envVars ? envVars.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
       }
     }
-    envVars.setEnvironmentVariables()
+    envVars?.setEnvironmentVariables()
   }
 
   /**
    * Reset environment variables
    */
   void resetEnvironmentVariables() {
-    envVars.restoreOriginalVariables(System.getenv())
+    envVars?.restoreOriginalVariables(System.getenv())
   }
 
   /**

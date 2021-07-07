@@ -44,4 +44,15 @@ class EnvironmentVariablesSpec extends Specification {
         then:
             !System.getenv('new-test')
     }
+
+    void 'set environment variables without adding env vars'() {
+        when:
+            environmentVariables.setEnvironmentVariables()
+
+        and:
+            environmentVariables.resetEnvironmentVariables()
+
+        then:
+            noExceptionThrown()
+    }
 }
