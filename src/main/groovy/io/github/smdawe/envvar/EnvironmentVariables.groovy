@@ -32,8 +32,8 @@ class EnvironmentVariables {
    * @param name
    * @param value
    */
-  void addEnvVar(String name, String value) {
+  EnvironmentVariables addEnvironmentVariable(String name, String value) {
     testEnvVars.put(name, value)
+    return this
   }
-
 }
