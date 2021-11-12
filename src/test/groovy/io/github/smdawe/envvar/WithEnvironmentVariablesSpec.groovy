@@ -19,7 +19,7 @@ class WithEnvironmentVariablesSpec extends Specification {
 
   void setupSpec() {
     envvarValueShared = UUID.randomUUID().toString()
-    environmentVariablesShared.addEnvVar('shared', envvarValueShared)
+    environmentVariablesShared.addEnvironmentVariable('shared', envvarValueShared)
   }
 
   void cleanupSpec() {
@@ -30,7 +30,7 @@ class WithEnvironmentVariablesSpec extends Specification {
 
   void setup() {
     envvarValue = UUID.randomUUID().toString()
-    environmentVariables.addEnvVar('test', envvarValue)
+    environmentVariables.addEnvironmentVariable('test', envvarValue)
   }
 
   void cleanup() {

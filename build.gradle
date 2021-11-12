@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     implementation group: 'org.codehaus.groovy', name: 'groovy', version: '3.0.8'
-    implementation group: 'org.spockframework', name: 'spock-core', version: '2.0-M5-groovy-3.0'
+    implementation group: 'org.spockframework', name: 'spock-core', version: '2.0-groovy-3.0'
     implementation 'com.github.stefanbirkner:system-lambda:1.2.0'
 }
 
@@ -39,7 +39,7 @@ signing {
 
 group = 'io.github.smdawe'
 archivesBaseName = 'environment-variables-extension'
-version = '1.0.0'
+version = '1.1.0'
 
 uploadArchives {
     repositories {
