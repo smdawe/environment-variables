@@ -11,7 +11,7 @@ class EnvironmentVariablesSpec extends Specification {
 
     void 'add an environment variable'() {
         when:
-            environmentVariables.addEnvVar('test', 'splurge')
+            environmentVariables.addEnvironmentVariable('test', 'splurge')
 
         then:
             environmentVariables.getTestEnvVars().test == 'splurge'
@@ -19,7 +19,7 @@ class EnvironmentVariablesSpec extends Specification {
 
     void 'set environment variables'() {
         given:
-           environmentVariables.addEnvVar('new-test', 'test')
+           environmentVariables.addEnvironmentVariable('new-test', 'test')
 
         when:
             environmentVariables.setEnvironmentVariables()
@@ -30,7 +30,7 @@ class EnvironmentVariablesSpec extends Specification {
 
     void 'set environment variables and reset'() {
         given:
-            environmentVariables.addEnvVar('new-test', 'test')
+            environmentVariables.addEnvironmentVariable('new-test', 'test')
 
         when:
             environmentVariables.setEnvironmentVariables()

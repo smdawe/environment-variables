@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-  compile 'io.github.smdawe:environment-variables-extension:1.0.0'
+  implementation 'io.github.smdawe:environment-variables-extension:1.1.0'
 }
 ```
 
@@ -23,7 +23,7 @@ class WithEnvironmentVariablesSpec extends Specification {
 
   void setup() {
     envvarValue = UUID.randomUUID().toString()
-    environmentVariables.addEnvVar('test', envvarValue)
+    environmentVariables.addEnvironmentVariable('test', envvarValue)
   }
 
   void 'get an env var'() {
