@@ -36,4 +36,9 @@ class EnvironmentVariables {
     testEnvVars.put(name, value)
     return this
   }
+
+  EnvironmentVariables addEnvironmentVariables(Map<String, String> toAdd) {
+    testEnvVars.putAll(toAdd)
+    return this
+  }
 }
