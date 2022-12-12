@@ -39,7 +39,7 @@ signing {
 
 group = 'io.github.smdawe'
 archivesBaseName = 'environment-variables-extension'
-version = '2.0.1'
+version = '2.0.2'
 
 uploadArchives {
     repositories {
@@ -58,7 +58,7 @@ uploadArchives {
                 name 'environment-variables-extension'
                 packaging 'jar'
                 // optionally artifactId can be defined here
-                description 'Spock extension to control environmnet variables'
+                description 'Spock extension to control environment variables'
                 url 'https://github.com/smdawe/environment-variables-extension'
 
                 scm {
