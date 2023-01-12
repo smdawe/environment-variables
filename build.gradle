@@ -5,6 +5,12 @@ plugins {
     id 'signing'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -39,12 +45,13 @@ signing {
 
 group = 'io.github.smdawe'
 archivesBaseName = 'environment-variables-extension'
-version = '2.0.2'
+version = '2.0.3'
+sourceCompatibility = JavaVersion.VERSION_17
 
 uploadArchives {
     repositories {
         mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+            beforeDeployment { deployment -> signing.signPom(deployment) }
 
             repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
                 authentication(userName: ssrhUsername, password: ossrhPassword)
