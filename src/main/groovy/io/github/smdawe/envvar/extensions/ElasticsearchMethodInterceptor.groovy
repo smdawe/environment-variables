@@ -8,8 +8,8 @@ import org.spockframework.runtime.model.SpecInfo
 
 class ElasticsearchMethodInterceptor extends AbstractMethodInterceptor {
 
-  private final SpecInfo spec
-  private final EnvironmentVariablesExtension.ErrorListener errorListener
+  private SpecInfo spec
+  private EnvironmentVariablesExtension.ErrorListener errorListener
 
   ElasticsearchMethodInterceptor(SpecInfo spec, EnvironmentVariablesExtension.ErrorListener errorListener) {
     this.spec = spec
