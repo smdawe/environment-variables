@@ -39,7 +39,7 @@ signing {
 
 group = 'io.github.smdawe'
 archivesBaseName = 'environment-variables-extension'
-version = '2.0.2'
+version = '2.0.4'
 
 uploadArchives {
     repositories {

@@ -4,7 +4,7 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.*
 
 class EnvironmentVariables {
 
-  final Map<String, String> testEnvVars = [:]
+  Map<String, String> testEnvVars = [:]
 
   private WithEnvironmentVariables envVars
 
