@@ -1,10 +1,10 @@
 package io.github.smdawe.envvar
 
-import io.github.smdawe.envvar.extensions.WithEnvironmentVariables
+import io.github.smdawe.envvar.extensions.SpecEnvironmentVariables
 import spock.lang.Shared
 import spock.lang.Specification
 
-@WithEnvironmentVariables
+@SpecEnvironmentVariables
 class WithEnvironmentVariablesSpec extends Specification {
 
   @Shared

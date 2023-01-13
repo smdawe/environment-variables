@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.smdawe</groupId>
+    <artifactId>environment-variables-extension</artifactId>
+    <version>3.0</version>
+    <packaging>jar</packaging>
+
+    <name>environment-variables-extension</name>
+    <description>Spock extension to control environment variables</description>
+    <url>https://github.com/smdawe/environment-variables-extension</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Simon Dawe</name>
+            <email>smdawe@yahoo.com</email>
+            <id>smdawe</id>
+            <organization>smdawe</organization>
+            <organizationUrl>https://github.com/smdawe</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/smdawe/environment-variables-extension.git</connection>
+        <developerConnection>scm:git:git://github.com/smdawe/environment-variables-extension.git</developerConnection>
+        <url>https://github.com/smdawe/environment-variables-extension/tree/master</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>4.0.7</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

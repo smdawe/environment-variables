@@ -1,12 +1,14 @@
 package io.github.smdawe.envvar
 
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*
+import io.github.smdawe.envvar.rules.Rules
 
+import static io.github.smdawe.envvar.rules.RulesHelper.*
 class EnvironmentVariables {
 
   Map<String, String> testEnvVars = [:]
 
-  private WithEnvironmentVariables envVars
+ // WithEnvironmentVariables envVars
+  Rules rules
 
   /**
    * Set all environment variables
@@ -14,17 +16,17 @@ class EnvironmentVariables {
   void setEnvironmentVariables() {
     if (testEnvVars) {
       testEnvVars.each { envVar ->
-        envVars = envVars ? envVars.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
+        rules = rules ? rules.and(envVar.key, envVar.value) : withEnvironmentVariable(envVar.key, envVar.value)
       }
     }
-    envVars?.setEnvironmentVariables()
+    rules?.setEnvironmentVariables()
   }
 
   /**
    * Reset environment variables
    */
   void resetEnvironmentVariables() {
-    envVars?.restoreOriginalVariables(System.getenv())
+    rules?.restoreOriginalVariables(System.getenv())
   }
 
   /**

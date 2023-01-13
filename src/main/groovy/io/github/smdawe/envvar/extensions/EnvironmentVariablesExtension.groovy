@@ -5,10 +5,10 @@ import org.spockframework.runtime.extension.AbstractAnnotationDrivenExtension
 import org.spockframework.runtime.model.ErrorInfo
 import org.spockframework.runtime.model.SpecInfo
 
-class EnvironmentVariablesExtension extends AbstractAnnotationDrivenExtension<WithEnvironmentVariables> {
+class EnvironmentVariablesExtension extends AbstractAnnotationDrivenExtension<SpecEnvironmentVariables> {
 
   @Override
-  void visitSpecAnnotation(WithEnvironmentVariables annotation, SpecInfo spec) {
+  void visitSpecAnnotation(SpecEnvironmentVariables annotation, SpecInfo spec) {
     ErrorListener listener = new ErrorListener()
     ElasticsearchMethodInterceptor interceptor = new ElasticsearchMethodInterceptor(spec, listener)
     spec.addSetupSpecInterceptor(interceptor)
